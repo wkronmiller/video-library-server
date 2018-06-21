@@ -86,10 +86,10 @@ functions:
               paths:
                 id: true
   list:
-    handler: youtube.list
+    handler: main.list
     events:
       - http:
-          path: youtube/videos
+          path: videos
           method: get
 
 #    The following are a few example events you can configure

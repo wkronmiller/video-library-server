@@ -60,13 +60,13 @@ provider:
 
 functions:
   add:
-    handler: handler.add
+    handler: youtube.add
     events:
       - http:
           path: youtube/videos
           method: post
   remove:
-    handler: handler.remove
+    handler: youtube.remove
     events:
       - http:
           path: youtube/videos/video/{id}
@@ -75,8 +75,18 @@ functions:
             parameters:
               paths:
                 id: true
+  get:
+    handler: youtube.get
+    events:
+      - http:
+          path: youtube/videos/video/{id}
+          method: get
+          request:
+            parameters:
+              paths:
+                id: true
   list:
-    handler: handler.list
+    handler: youtube.list
     events:
       - http:
           path: youtube/videos
